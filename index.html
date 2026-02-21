@@ -3,11 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreamland</title>
+    <title>DREAMLAND PROJECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <script src="script.js"></script>
+    <!-- 3D BACKGROUND — always on, drives both idle animation & transition -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- DARK OVERLAY — only dims the UI during transition, canvas stays visible -->
+    <div id="transition-overlay">
+        <div id="transition-label"></div>
+    </div>
+
+    <!-- APP -->
+    <div id="app">
+
+        <!-- ── HOME ── -->
+        <div class="page active" id="page-home">
+            <nav>
+                <a href="#" class="logo-link"><h1 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:#c8a84b;">DREAMLAND</h1></a>
+                <div class="navigation">
+                    <a href="#" class="nav-link active" data-page="home">HOME</a>
+                    <a href="#" class="nav-link" data-page="timeline">TIMELINE</a>
+                    <a href="#" class="nav-link" data-page="legends">LEGENDS</a>
+                    <a href="#" class="nav-link" data-page="matches">MATCHES</a>
+                    <a href="#" class="nav-link" data-page="stories">STORIES</a>
+                </div>
+            </nav>
+            <div class="page-content home-layout">
+                <div class="main">
+                    <div class="center"></div>
+                    <h3>Interactive Documentary</h3>
+                    <h1>SCOTLAND'S WORLD CUP JOURNEY</h1>
+                    <p>Explore 70 years of hope, heartbreak, and unwavering loyalty through an immersive interactive experience.</p>
+                    <div class="btn"><button data-page="timeline">BEGIN JOURNEY</button></div>
+                    <div class="imagebox">
+                        <img src="https://i2-prod.dailyrecord.co.uk/article36755329.ece/ALTERNATES/s1200f/0_Genoa-CFC-v-SSC-Napoli-Serie-A.jpg" alt="">
+                        <img src="https://i.guim.co.uk/img/media/1e60508d44424980814e13315084873b8ffa9df0/0_0_5014_3008/master/5014.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=eff85fce148880a7a70b202d677d6e91" alt="">
+                        <img src="https://e0.365dm.com/24/11/2048x1152/skysports-ben-doak-scotland_6749546.jpg?20241116092004" alt="">
+                        <img src="https://i.guim.co.uk/img/media/d46bd94904afe9d8be526538b6907bb90bf93872/0_113_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f06f54faa89ab8c7ddb62b44ec370f1a" alt="">
+                        <img src="https://www.scottishfa.co.uk/media/13745/che-adams-2026.jpg?mode=max&width=180&format=webp" alt="">
+                    </div>
+                    <p>An interactive documentary celebrating Scotland's World Cup journey. Built with passion by fans, for fans.</p>
+                </div>
+                <div class="right">
+                    <img id="card" src="https://c.files.bbci.co.uk/af3e/live/44d70eb0-c522-11f0-ba4c-a176bf1fb76f.jpg" alt="">
+                </div>
+            </div>
+
+        <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <h2 class="footer-title">DREAMLAND</h2>
+                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
+                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="#" data-page="timeline">Timeline</a>
+                            <a href="#" data-page="legends">Legends</a>
+                            <a href="#" data-page="matches">Matches</a>
+                            <a href="#" data-page="stories">Fan Stories</a>
+                            <a href="#">Heartbreak Index</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Credits</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP &amp; 💙</p>
+                </div>
+            </footer>
+        </div>
+</div>
 </body>
 </html>
