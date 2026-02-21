@@ -9,48 +9,364 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 3D BACKGROUND — always on, drives both idle animation & transition -->
     <canvas id="bg-canvas"></canvas>
 
-    <div class="page1">
-        <nav>
-            <a href="">
-                <div id="logo">
-                    <h1>🏴󠁧󠁢󠁳󠁣󠁴󠁿 DREAMLAND</h1>
-                </div>
-            </a>
-            <div class="navigation">
-                <a href="">HOME</a>
-                <a href="">TIMELINE</a>
-                <a href="">LEGENDS</a>
-                <a href="">MATCHES</a>
-                <a href="">STORIES</a>
-            </div>
-        </nav>
-
-        <div class="main">
-            <div class="center"></div>
-            <h3>Interactive Documentary</h3>
-            <h1>SCOTLAND'S WORLD CUP JOURNEY</h1>
-            <p>Explore 70 years of hope, heartbreak, and unwavering loyalty through an immersive interactive experience.</p>
-            <div class="btn">
-                <button>BEGIN JOURNEY</button>
-            </div>
-            <div class="imagebox">
-                <img style="--left: 0rem" src="https://i2-prod.dailyrecord.co.uk/article36755329.ece/ALTERNATES/s1200f/0_Genoa-CFC-v-SSC-Napoli-Serie-A.jpg" alt="">
-                <img style="--left: 2rem" src="https://i.guim.co.uk/img/media/1e60508d44424980814e13315084873b8ffa9df0/0_0_5014_3008/master/5014.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=eff85fce148880a7a70b202d677d6e91" alt="">
-                <img style="--left: 4rem" src="https://e0.365dm.com/24/11/2048x1152/skysports-ben-doak-scotland_6749546.jpg?20241116092004" alt="">
-                <img style="--left: 6rem" src="https://i.guim.co.uk/img/media/d46bd94904afe9d8be526538b6907bb90bf93872/0_113_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f06f54faa89ab8c7ddb62b44ec370f1a" alt="">
-                <img style="--left: 8rem" src="https://www.scottishfa.co.uk/media/13745/che-adams-2026.jpg?mode=max&width=180&format=webp" alt="">
-            </div>
-            <p>An interactive documentary celebrating Scotland's World Cup journey. Built with passion by fans, for fans.</p>
-        </div>
-
-        <div class="right">
-            <img id="card" src="https://c.files.bbci.co.uk/af3e/live/44d70eb0-c522-11f0-ba4c-a176bf1fb76f.jpg" alt="">
-        </div>
+    <!-- DARK OVERLAY — only dims the UI during transition, canvas stays visible -->
+    <div id="transition-overlay">
+        <div id="transition-label"></div>
     </div>
+
+    <!-- APP -->
+    <div id="app">
+
+        <!-- ── HOME ── -->
+        <div class="page active" id="page-home">
+            <nav>
+                <a href="#" class="logo-link"><h1 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:#c8a84b;">DREAMLAND</h1></a>
+                <div class="navigation">
+                    <a href="#" class="nav-link active" data-page="home">HOME</a>
+                    <a href="#" class="nav-link" data-page="timeline">TIMELINE</a>
+                    <a href="#" class="nav-link" data-page="legends">LEGENDS</a>
+                    <a href="#" class="nav-link" data-page="matches">MATCHES</a>
+                    <a href="#" class="nav-link" data-page="stories">STORIES</a>
+                </div>
+            </nav>
+            <div class="page-content home-layout">
+                <div class="main">
+                    <div class="center"></div>
+                    <h3>Interactive Documentary</h3>
+                    <h1>SCOTLAND'S WORLD CUP JOURNEY</h1>
+                    <p>Explore 70 years of hope, heartbreak, and unwavering loyalty through an immersive interactive experience.</p>
+                    <div class="btn"><button data-page="timeline">BEGIN JOURNEY</button></div>
+                    <div class="imagebox">
+                        <img src="https://i2-prod.dailyrecord.co.uk/article36755329.ece/ALTERNATES/s1200f/0_Genoa-CFC-v-SSC-Napoli-Serie-A.jpg" alt="">
+                        <img src="https://i.guim.co.uk/img/media/1e60508d44424980814e13315084873b8ffa9df0/0_0_5014_3008/master/5014.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=eff85fce148880a7a70b202d677d6e91" alt="">
+                        <img src="https://e0.365dm.com/24/11/2048x1152/skysports-ben-doak-scotland_6749546.jpg?20241116092004" alt="">
+                        <img src="https://i.guim.co.uk/img/media/d46bd94904afe9d8be526538b6907bb90bf93872/0_113_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f06f54faa89ab8c7ddb62b44ec370f1a" alt="">
+                        <img src="https://www.scottishfa.co.uk/media/13745/che-adams-2026.jpg?mode=max&width=180&format=webp" alt="">
+                    </div>
+                    <p>An interactive documentary celebrating Scotland's World Cup journey. Built with passion by fans, for fans.</p>
+                </div>
+                <div class="right">
+                    <img id="card" src="https://c.files.bbci.co.uk/af3e/live/44d70eb0-c522-11f0-ba4c-a176bf1fb76f.jpg" alt="">
+                </div>
+            </div>
+
+        <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <h2 class="footer-title">DREAMLAND</h2>
+                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
+                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="#" data-page="timeline">Timeline</a>
+                            <a href="#" data-page="legends">Legends</a>
+                            <a href="#" data-page="matches">Matches</a>
+                            <a href="#" data-page="stories">Fan Stories</a>
+                            <a href="#">Heartbreak Index</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Credits</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP &amp; 💙</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ── TIMELINE ── -->
+        <div class="page" id="page-timeline">
+            <nav>
+                <a href="#" class="logo-link"><h1 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:#c8a84b;">DREAMLAND</h1></a>
+                <div class="navigation">
+                    <a href="#" class="nav-link" data-page="home">HOME</a>
+                    <a href="#" class="nav-link active" data-page="timeline">TIMELINE</a>
+                    <a href="#" class="nav-link" data-page="legends">LEGENDS</a>
+                    <a href="#" class="nav-link" data-page="matches">MATCHES</a>
+                    <a href="#" class="nav-link" data-page="stories">STORIES</a>
+                </div>
+            </nav>
+            <div class="page-content inner-page">
+                <h3>The Journey</h3>
+                <h1>TIMELINE</h1>
+                <div class="timeline-grid">
+                    <div class="timeline-card"><span class="year">1954</span><h4>Switzerland</h4><p>Scotland's debut World Cup. Defeated by Austria and Uruguay in a baptism of fire.</p></div>
+                    <div class="timeline-card"><span class="year">1974</span><h4>West Germany</h4><p>Unbeaten but eliminated on goal difference. The original heartbreak tournament.</p></div>
+                    <div class="timeline-card"><span class="year">1978</span><h4>Argentina</h4><p>Archie Gemmill's iconic solo goal against Holland. The greatest moment in Scottish football.</p></div>
+                    <div class="timeline-card"><span class="year">1982</span><h4>Spain</h4><p>Scotland beat New Zealand 5-2 but couldn't survive the group stage despite fine performances.</p></div>
+                    <div class="timeline-card"><span class="year">1986</span><h4>Mexico</h4><p>Gordon Strachan shone but Scotland fell short once again in the group stage.</p></div>
+                    <div class="timeline-card"><span class="year">1990</span><h4>Italy</h4><p>Mo Johnston's goal wasn't enough. A familiar exit from the group stage in Italia 90.</p></div>
+                    <div class="timeline-card"><span class="year">1998</span><h4>France</h4><p>The last chapter. John Collins' penalty against Brazil in the opening match at Stade de France.</p></div>
+                    <div class="timeline-card future"><span class="year">2026?</span><h4>USA · Canada · Mexico</h4><p>The dream lives on. Scotland pushing harder than ever for a return to the world stage.</p></div>
+                </div>
+            </div>
+
+        <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <h2 class="footer-title">DREAMLAND</h2>
+                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
+                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="#" data-page="timeline">Timeline</a>
+                            <a href="#" data-page="legends">Legends</a>
+                            <a href="#" data-page="matches">Matches</a>
+                            <a href="#" data-page="stories">Fan Stories</a>
+                            <a href="#">Heartbreak Index</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Credits</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP &amp; 💙</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ── LEGENDS ── -->
+        <div class="page" id="page-legends">
+            <nav>
+                <a href="#" class="logo-link"><h1 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:#c8a84b;">DREAMLAND</h1></a>
+                <div class="navigation">
+                    <a href="#" class="nav-link" data-page="home">HOME</a>
+                    <a href="#" class="nav-link" data-page="timeline">TIMELINE</a>
+                    <a href="#" class="nav-link active" data-page="legends">LEGENDS</a>
+                    <a href="#" class="nav-link" data-page="matches">MATCHES</a>
+                    <a href="#" class="nav-link" data-page="stories">STORIES</a>
+                </div>
+            </nav>
+            <div class="page-content inner-page">
+    <h3>The Icons</h3>
+    <h1>LEGENDS</h1>
+
+    <div class="legends-grid">
+
+        <!-- Archie Gemmill -->
+        <div class="legend-card">
+            <div class="legend-img">
+                <img src="https://sshf.sportscotland.org.uk/media/1235/archie_gemmill_4.jpg?anchor=center&mode=crop&width=800&height=600&rnd=131862648430000000" alt="">
+            </div>
+            <div class="legend-num">10</div>
+            <h4>Archie Gemmill</h4>
+            <p>Scored the greatest World Cup goal Scotland produced. Pure genius against Holland in Argentina '78.</p>
+        </div>
+
+        <!-- Kenny Dalglish -->
+        <div class="legend-card">
+            <div class="legend-img">
+                <img src="https://150.scottishfa.co.uk/media/xg3h2pzq/873951-1.jpg" alt="Kenny Dalglish">
+            </div>
+            <div class="legend-num">7</div>
+            <h4>Kenny Dalglish</h4>
+            <p>102 caps. Scotland's greatest ever player. A legend at club and international level across two decades.</p>
+        </div>
+
+        <!-- Gordon Strachan -->
+        <div class="legend-card">
+            <div class="legend-img">
+                <img src="https://www.scottishfa.co.uk/media/6682/gordon-strachen-profile-picture.jpg?mode=max&width=180&format=webp" alt="Gordon Strachan">
+            </div>
+            <div class="legend-num">8</div>
+            <h4>Gordon Strachan</h4>
+            <p>Tenacious, skilful and endlessly passionate. The heartbeat of Scotland's midfield through the 1980s.</p>
+        </div>
+
+        <!-- Jim Leighton -->
+        <div class="legend-card">
+            <div class="legend-img">
+                <img src="https://www.scottishfa.co.uk/media/2967/jim-leighton.jpg?mode=max&width=180&format=webp" alt="Jim Leighton">
+            </div>
+            <div class="legend-num">1</div>
+            <h4>Jim Leighton</h4>
+            <p>Scotland's most capped goalkeeper. A commanding presence between the posts across four decades.</p>
+        </div>
+
+        <!-- John Collins -->
+        <div class="legend-card">
+            <div class="legend-img">
+                <img src="https://i.guim.co.uk/img/media/c9082d57eb2b7064b6231ecec7435fcaf9eea049/133_292_2872_1723/master/2872.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e07571656277fbb210d816b5aae57d40" alt="John Collins">
+            </div>
+            <div class="legend-num">11</div>
+            <h4>John Collins</h4>
+            <p>Scored the famous penalty against Brazil in the 1998 World Cup opener. A moment etched in history.</p>
+        </div>
+
+        <!-- Graeme Souness -->
+        <div class="legend-card">
+            <div class="legend-img">
+                <img src="https://i.pinimg.com/474x/49/b6/3f/49b63fc311bd3a3fe6117c38c8ab1a08.jpg" alt="Graeme Souness">
+            </div>
+            <div class="legend-num">6</div>
+            <h4>Graeme Souness</h4>
+            <p>One of the most dominant midfielders Scotland has ever produced. Fierce, skilled, and a born leader.</p>
+        </div>
+
+    </div>
+</div>
+
+        <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <h2 class="footer-title">DREAMLAND</h2>
+                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
+                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="#" data-page="timeline">Timeline</a>
+                            <a href="#" data-page="legends">Legends</a>
+                            <a href="#" data-page="matches">Matches</a>
+                            <a href="#" data-page="stories">Fan Stories</a>
+                            <a href="#">Heartbreak Index</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Credits</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP &amp; 💙</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ── MATCHES ── -->
+        <div class="page" id="page-matches">
+            <nav>
+                <a href="#" class="logo-link"><h1 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:#c8a84b;">DREAMLAND</h1></a>
+                <div class="navigation">
+                    <a href="#" class="nav-link" data-page="home">HOME</a>
+                    <a href="#" class="nav-link" data-page="timeline">TIMELINE</a>
+                    <a href="#" class="nav-link" data-page="legends">LEGENDS</a>
+                    <a href="#" class="nav-link active" data-page="matches">MATCHES</a>
+                    <a href="#" class="nav-link" data-page="stories">STORIES</a>
+                </div>
+            </nav>
+            <div class="page-content inner-page">
+                <h3>Greatest Games</h3>
+                <h1>MATCHES</h1>
+                <div class="matches-list">
+                    <div class="match-card"><div class="match-meta">1978 · Group Stage · Argentina</div><div class="match-teams"><span>Scotland</span><span class="score">3 — 2</span><span>Holland</span></div><p>Archie Gemmill's wonder goal. Three men beaten in 22 seconds — perhaps the greatest individual World Cup goal ever scored.</p></div>
+                    <div class="match-card"><div class="match-meta">1998 · Group Stage · France</div><div class="match-teams"><span>Scotland</span><span class="score">1 — 2</span><span>Brazil</span></div><p>John Collins' cool penalty equalised against the eventual champions in the World Cup opening match at Stade de France.</p></div>
+                    <div class="match-card"><div class="match-meta">1974 · Group Stage · West Germany</div><div class="match-teams"><span>Scotland</span><span class="score">2 — 0</span><span>Zaire</span></div><p>A commanding win. Scotland remained unbeaten throughout the tournament but were cruelly eliminated on goal difference.</p></div>
+                    <div class="match-card"><div class="match-meta">1982 · Group Stage · Spain</div><div class="match-teams"><span>Scotland</span><span class="score">5 — 2</span><span>New Zealand</span></div><p>John Wark scored twice in a thrilling win, but Brazil in the next game ended Scotland's World Cup adventure once more.</p></div>
+                </div>
+            </div>
+
+        <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <h2 class="footer-title">DREAMLAND</h2>
+                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
+                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="#" data-page="timeline">Timeline</a>
+                            <a href="#" data-page="legends">Legends</a>
+                            <a href="#" data-page="matches">Matches</a>
+                            <a href="#" data-page="stories">Fan Stories</a>
+                            <a href="#">Heartbreak Index</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Credits</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP &amp; 💙</p>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ── STORIES ── -->
+        <div class="page" id="page-stories">
+            <nav>
+                <a href="#" class="logo-link"><h1 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:#c8a84b;">DREAMLAND</h1></a>
+                <div class="navigation">
+                    <a href="#" class="nav-link" data-page="home">HOME</a>
+                    <a href="#" class="nav-link" data-page="timeline">TIMELINE</a>
+                    <a href="#" class="nav-link" data-page="legends">LEGENDS</a>
+                    <a href="#" class="nav-link" data-page="matches">MATCHES</a>
+                    <a href="#" class="nav-link active" data-page="stories">STORIES</a>
+                </div>
+            </nav>
+            <div class="page-content inner-page">
+                <h3>The Tales</h3>
+                <h1>STORIES</h1>
+                <div class="stories-grid">
+                    <div class="story-card featured"><h4>The Tartan Army</h4><p>More than fans — an army of loyal supporters who follow Scotland to every corner of the world, win or lose, always singing, always believing in the beautiful game and the nation that plays it.</p><span class="read-more">READ MORE →</span></div>
+                    <div class="story-card"><h4>Gemmill's Goal</h4><p>Three men beaten, a nation elevated. In 22 seconds, Archie Gemmill produced something Scotland still talks about nearly 50 years later.</p><span class="read-more">READ MORE →</span></div>
+                    <div class="story-card"><h4>Unbeaten & Out</h4><p>1974. Scotland became the only nation in World Cup history to be eliminated without losing a single match. Heartbreak defined.</p><span class="read-more">READ MORE →</span></div>
+                    <div class="story-card"><h4>The Long Wait</h4><p>Since France 1998, Scotland has not returned to a World Cup. 26 years and counting. The dream, however, never dies.</p><span class="read-more">READ MORE →</span></div>
+                </div>
+            </div>
+
+        <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <h2 class="footer-title">DREAMLAND</h2>
+                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
+                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4>Explore</h4>
+                            <a href="#" data-page="timeline">Timeline</a>
+                            <a href="#" data-page="legends">Legends</a>
+                            <a href="#" data-page="matches">Matches</a>
+                            <a href="#" data-page="stories">Fan Stories</a>
+                            <a href="#">Heartbreak Index</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>About</h4>
+                            <a href="#">Our Story</a>
+                            <a href="#">Privacy</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Credits</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP &amp; 💙</p>
+                </div>
+            </footer>
+        </div>
+
+    </div><!-- /#app -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
