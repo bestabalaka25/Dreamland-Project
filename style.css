@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Barlow', sans-serif;
-    background: #050c1c;
-    color: white;
+    background: #0b1a3d; /* Navy blue background */
+    color: #c8a84b; /* Gold text */
     scroll-behavior: smooth;
     line-height: 1.6;
 }
@@ -17,11 +17,11 @@ body {
 h1, h2, h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: normal;
+    color: #c8a84b; /* Gold headings */
 }
 
 h1 {
     font-size: clamp(3rem, 10vw, 5rem);
-    color: #c8a84b;
 }
 
 h2 {
@@ -31,7 +31,6 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
-    color: #c8a84b;
     margin-bottom: 0.5rem;
 }
 
@@ -49,7 +48,8 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-    background: rgba(5, 12, 28, 0.95);
+    background: #ffffff; /* White navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: background 0.3s ease;
@@ -57,7 +57,8 @@ p {
 
 #navbar h1 {
     font-size: 1.5rem;
-    color: #c8a84b;
+    color: #0b1a3d; /* Dark blue */
+    -webkit-text-stroke: 1px #c8a84b; /* Gold outline */
 }
 
 #navbar ul {
@@ -68,15 +69,17 @@ p {
 
 #navbar a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
+    color: #0b1a3d; /* Dark blue text */
     font-weight: 600;
-    transition: color 0.3s ease;
     position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    -webkit-text-stroke: 0.5px #c8a84b; /* Subtle gold outline */
 }
 
 #navbar a:hover,
 #navbar a.active {
-    color: #c8a84b;
+    color: #c8a84b; /* Gold on hover */
+    text-shadow: 0 0 5px rgba(200,168,75,0.7);
 }
 
 #navbar a::after {
@@ -86,7 +89,7 @@ p {
     left: 0;
     width: 0;
     height: 2px;
-    background: #c8a84b;
+    background: #c8a84b; /* Gold underline */
     transition: width 0.3s ease;
 }
 
@@ -118,12 +121,12 @@ p {
 .hero p {
     font-size: 1.2rem;
     margin-top: 1rem;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Intro */
 .intro {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.03); /* subtle transparent overlay */
     text-align: center;
 }
 
@@ -179,6 +182,7 @@ p {
 
 .timeline-content {
     background: rgba(255, 255, 255, 0.05);
+    color: #c8a84b;
     padding: 2rem;
     border-radius: 8px;
     border-left: 4px solid #c8a84b;
@@ -192,8 +196,6 @@ p {
 
 .year {
     font-size: 2rem;
-    color: #c8a84b;
-    font-family: 'Bebas Neue';
     margin-bottom: 1rem;
 }
 
@@ -211,28 +213,41 @@ p {
 }
 
 .player-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    position: relative;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
-.player-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(200, 168, 75, 0.2);
+.player-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.player-card.reveal {
-    opacity: 1;
-    transform: translateY(0);
+.player-card:hover .player-image {
+    filter: blur(0);
+    transform: scale(1.05);
 }
 
 .player-placeholder {
-    font-size: 1.2rem;
-    color: #c8a84b;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 0;
 }
 
 /* History */
@@ -260,13 +275,13 @@ p {
 footer {
     text-align: center;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(29, 105, 200, 0.5); /* lighter blue footer */
     margin-top: 4rem;
 }
 
 footer p {
     font-size: 0.9rem;
-    opacity: 0.7;
+    color: #c8a84b;
 }
 
 /* Animations */
