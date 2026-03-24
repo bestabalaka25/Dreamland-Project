@@ -29,7 +29,7 @@ body {
   font-family: var(--font-body);
 }
 
-/* NAV (optional but usually sits above hero) */
+
 nav {
   position: sticky;
   top: 0;
@@ -104,7 +104,7 @@ nav {
   justify-content: center;
   padding: 72px 32px 56px;
   overflow: hidden;
-  isolation: isolate; /* keeps bg layers behind content */
+  isolation: isolate; 
 }
 
 .hero-bg {
@@ -229,7 +229,6 @@ footer {
   text-align: right;
 }
 
-/* small responsive tweak */
 @media (max-width: 600px) {
   .hero-title { font-size: clamp(2.2rem, 10vw, 3rem); }
   .hero-sub { font-size: .75rem; }
