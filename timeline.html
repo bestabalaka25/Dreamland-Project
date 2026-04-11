@@ -12,44 +12,33 @@
     <!-- APP -->
     <div id="app">
 
-        <!-- ── HOME ── -->
-        <div class="page active" id="page-home">
+        <!-- ── Timeline ── -->
+        <div class="page active" id="page-timeline">
             <nav>
                 <a href="index.html" class="logo-link"><h1>DREAMLAND</h1></a>
                 <div class="navigation">
-                    <a href="index.html" class="nav-link active" data-page="home">HOME</a>
-                    <a href="timeline.html" class="nav-link" data-page="timeline">TIMELINE</a>
+                    <a href="index.html" class="nav-link" data-page="home">HOME</a>
+                    <a href="timeline.html" class="nav-link active" data-page="timeline">TIMELINE</a>
                     <a href="legends.html" class="nav-link" data-page="legends">LEGENDS</a>
                     <a href="matches.html" class="nav-link" data-page="matches">MATCHES</a>
                     <a href="stories.html" class="nav-link" data-page="stories">STORIES</a>
                 </div>
             </nav>
 
-            <div class="page-content home-layout">
-                <div class="main">
-                    <h3 id="heading-text-h3">Interactive Documentary</h3>
-                    <h1 id="heading-text-h1">SCOTLAND'S WORLD CUP JOURNEY</h1>
-                    <p id="paragraph-text">Explore 70 years of hope, heartbreak, and unwavering loyalty through an immersive interactive experience.</p>
-                    
-                    <div class="btn"><button data-page="timeline">BEGIN JOURNEY</button></div>
-                    
-                    <div class="imagebox">
-                        <img src="https://i2-prod.dailyrecord.co.uk/article36755329.ece/ALTERNATES/s1200f/0_Genoa-CFC-v-SSC-Napoli-Serie-A.jpg" alt="">
-                        <img src="https://i.guim.co.uk/img/media/1e60508d44424980814e13315084873b8ffa9df0/0_0_5014_3008/master/5014.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=eff85fce148880a7a70b202d677d6e91" alt="">
-                        <img src="https://e0.365dm.com/24/11/2048x1152/skysports-ben-doak-scotland_6749546.jpg?20241116092004" alt="">
-                        <img src="https://i.guim.co.uk/img/media/d46bd94904afe9d8be526538b6907bb90bf93872/0_113_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f06f54faa89ab8c7ddb62b44ec370f1a" alt="">
-                        <img src="https://www.scottishfa.co.uk/media/13745/che-adams-2026.jpg?mode=max&width=180&format=webp" alt="">
-                    </div>
-                    
-                    <p>An interactive documentary celebrating Scotland's World Cup journey. Built with passion by fans, for fans.</p>
+            <div class="page-content timeline-layout">
+                <div class="hero-image"></div>
+                
+                <div class="timeline-hero-text">
+                    <h1 id="heading-text-h1">Dreamland</h1>
+                    <p id="paragraph-text">Explore Scotland's FIFA World Cup journey through this interactive timeline. Scroll each year to relive the highs and lows of the nation's footballing history.</p>
                 </div>
-
-                <div class="right">
-                    <img id="card" src="https://c.files.bbci.co.uk/af3e/live/44d70eb0-c522-11f0-ba4c-a176bf1fb76f.jpg" alt="">
+                
+                <div class="timeline">
+                    <!-- Timeline items will be dynamically generated here -->
                 </div>
             </div>
 
-         <footer class="site-footer">
+            <footer class="site-footer">
                 <div class="footer-inner">
                     <div class="footer-left">
                         <h2 class="footer-title">DREAMLAND</h2>
@@ -79,7 +68,7 @@
                 </div>
             </footer>
         </div>
-</div>
+    </div>
 </body>
 <script type="module" src="./main.js"></script>
 </html>
