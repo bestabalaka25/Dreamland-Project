@@ -1,85 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAMLAND PROJECT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dreamland — Scotland's World Cup Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <!-- APP -->
-    <div id="app">
 
-        <!-- ── HOME ── -->
-        <div class="page active" id="page-home">
-            <nav>
-                <a href="index.html" class="logo-link"><h1>DREAMLAND</h1></a>
-                <div class="navigation">
-                    <a href="index.html" class="nav-link active" data-page="home">HOME</a>
-                    <a href="timeline.html" class="nav-link" data-page="timeline">TIMELINE</a>
-                    <a href="legends.html" class="nav-link" data-page="legends">LEGENDS</a>
-                    <a href="matches.html" class="nav-link" data-page="matches">MATCHES</a>
-                    <a href="stories.html" class="nav-link" data-page="stories">STORIES</a>
-                </div>
-            </nav>
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#home" class="nav-logo">DREAMLAND</a>
+  <ul class="nav-links">
+    <li><a href="#home" data-section="home">HOME</a></li>
+    <li><a href="#matches" data-section="matches">TIMELINE</a></li>
+    <li><a href="#players" data-section="players">PLAYERS</a></li>
+    <li><a href="#party" data-section="party">NO PARTY</a></li>
+    <li><a href="#stories" data-section="stories">STORIES</a></li>
+  </ul>
+</nav>
 
-            <div class="page-content home-layout">
-                <div class="main">
-                    <h3 id="heading-text-h3">Interactive Documentary</h3>
-                    <h1 id="heading-text-h1">SCOTLAND'S WORLD CUP JOURNEY</h1>
-                    <p id="paragraph-text">Explore 70 years of hope, heartbreak, and unwavering loyalty through an immersive interactive experience.</p>
-                    
-                    <div class="btn"><button data-page="timeline">BEGIN JOURNEY</button></div>
-                    
-                    <div class="imagebox">
-                        <img src="https://i2-prod.dailyrecord.co.uk/article36755329.ece/ALTERNATES/s1200f/0_Genoa-CFC-v-SSC-Napoli-Serie-A.jpg" alt="">
-                        <img src="https://i.guim.co.uk/img/media/1e60508d44424980814e13315084873b8ffa9df0/0_0_5014_3008/master/5014.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=eff85fce148880a7a70b202d677d6e91" alt="">
-                        <img src="https://e0.365dm.com/24/11/2048x1152/skysports-ben-doak-scotland_6749546.jpg?20241116092004" alt="">
-                        <img src="https://i.guim.co.uk/img/media/d46bd94904afe9d8be526538b6907bb90bf93872/0_113_3000_1800/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f06f54faa89ab8c7ddb62b44ec370f1a" alt="">
-                        <img src="https://www.scottishfa.co.uk/media/13745/che-adams-2026.jpg?mode=max&width=180&format=webp" alt="">
-                    </div>
-                    
-                    <p>An interactive documentary celebrating Scotland's World Cup journey. Built with passion by fans, for fans.</p>
-                </div>
+<!-- HOME / HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-                <div class="right">
-                    <img id="card" src="https://c.files.bbci.co.uk/af3e/live/44d70eb0-c522-11f0-ba4c-a176bf1fb76f.jpg" alt="">
-                </div>
-            </div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">
+      Scotland's World Cup Journey &middot; 1974&ndash;1998
+    </p>
+    <h1 class="hero-title">DREAMLAND PROJECT</h1>
+    <p class="hero-sub">
+      An interactive documentary celebrating Scotland's World Cup journey.
+      Built with passion by fans, for fans.
+    </p>
+    <a href="#players" class="btn-primary">BEGIN JOURNEY</a>
+  </div>
+</section>
 
-         <footer class="site-footer">
-                <div class="footer-inner">
-                    <div class="footer-left">
-                        <h2 class="footer-title">DREAMLAND</h2>
-                        <p class="footer-subtitle">Scotland's World Cup Journey • 1950–2026</p>
-                        <p class="footer-desc">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
-                    </div>
-                    <div class="footer-links">
-                        <div class="footer-col">
-                            <h4>Explore</h4>
-                            <a href="timeline.html" data-page="timeline">Timeline</a>
-                            <a href="legends.html" data-page="legends">Legends</a>
-                            <a href="matches.html" data-page="matches">Matches</a>
-                            <a href="stories.html" data-page="stories">Fan Stories</a>
-                            <a href="heartbreak-index.html">Heartbreak Index</a>
-                        </div>
-                        <div class="footer-col">
-                            <h4>About</h4>
-                            <a href="#">Our Story</a>
-                            <a href="#">Privacy</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Credits</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>© 2026 Dreamland Project • Built with Three.js, GSAP & More</p>
-                </div>
-            </footer>
-        </div>
-</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <h2>DREAMLAND</h2>
+    <p>Scotland's World Cup Journey &middot; 1950&ndash;2026</p>
+    <p class="footer-note">
+      An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.
+    </p>
+  </div>
+  <p class="footer-copy">
+    &copy; 2026 Dreamland Project<br>
+    Built with HTML, CSS, and JavaScript
+  </p>
+</footer>
+<script src="script.js"></script>
 </body>
-<script type="module" src="./main.js"></script>
 </html>
