@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAMLAND PROJECT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dreamland — Scotland's World Cup Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <!-- APP -->
-    <div id="app">
+    <!-- NAV -->
+<nav id="main-nav">
+  <a href="#home" class="nav-logo">DREAMLAND</a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-section="home">HOME</a></li>
+    <li><a href="timeline.html" data-section="timeline">TIMELINE</a></li>
+    <li><a href="#players" data-section="players">PLAYERS</a></li>
+    <li><a href="#party" data-section="party">NO PARTY</a></li>
+    <li><a href="#stories" data-section="stories">STORIES</a></li>
+  </ul>
+</nav>
 
+    <section id="timeline">
         <!-- ── Timeline ── -->
         <div class="page active" id="page-timeline">
-            <nav>
-                <a href="index.html" class="logo-link"><h1>DREAMLAND</h1></a>
-                <div class="navigation">
-                    <a href="index.html" class="nav-link" data-page="home">HOME</a>
-                    <a href="timeline.html" class="nav-link active" data-page="timeline">TIMELINE</a>
-                    <a href="legends.html" class="nav-link" data-page="legends">LEGENDS</a>
-                    <a href="matches.html" class="nav-link" data-page="matches">MATCHES</a>
-                    <a href="stories.html" class="nav-link" data-page="stories">STORIES</a>
-                </div>
-            </nav>
 
             <div class="page-content timeline-layout">
                 <div class="hero-image"></div>
@@ -68,7 +69,9 @@
                 </div>
             </footer>
         </div>
-    </div>
+    </section>
 </body>
 <script type="module" src="./main.js"></script>
 </html>
+
+

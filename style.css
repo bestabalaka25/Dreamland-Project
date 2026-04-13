@@ -29,6 +29,11 @@ body {
   font-family: var(--font-body);
 }
 
+.heading {
+  font-family: var(--font-hero);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
 
 nav {
   position: sticky;
@@ -98,13 +103,13 @@ nav {
 /* HERO / HOME */
 .hero {
   position: relative;
-  min-height: 380px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 72px 32px 56px;
   overflow: hidden;
-  isolation: isolate; 
+  isolation: isolate;
 }
 
 .hero-bg {
@@ -113,6 +118,7 @@ nav {
   background:
     url("https://www.hampdenpark.co.uk/assets/image-cache/media/history/20288232.43a31cde.webp")
     center/cover no-repeat;
+  filter: blur(2.5px);
   z-index: -2;
 }
 
@@ -129,6 +135,8 @@ nav {
   z-index: 1;
   text-align: center;
   max-width: 720px;
+  padding: 25px;
+  border-radius: 8px;
 }
 
 .hero-eyebrow {
@@ -141,10 +149,7 @@ nav {
 }
 
 .hero-title {
-  font-family: var(--font-hero);
   font-size: clamp(2.6rem, 6vw, 4rem);
-  letter-spacing: .18em;
-  text-transform: uppercase;
   color: var(--gold-lt);
   text-shadow: 0 3px 20px rgba(0,0,0,.85);
   margin-bottom: 12px;
@@ -174,7 +179,7 @@ nav {
   background: var(--gold-lt);
   text-decoration: none;
   cursor: pointer;
-  transition: background .2s, color .2s, transform .15s, box-shadow .15s;
+  transition: .2s, color .2s, transform .15s, box-shadow .15s;
 }
 
 .btn-primary:hover {
@@ -184,21 +189,46 @@ nav {
   box-shadow: 0 6px 18px rgba(0,0,0,.35);
 }
 
+/*/////// Timeline ///////*/
+
+.hero-image {
+    flex-direction: column; 
+    align-items: center;
+    height: 70vh;
+   
+    background-image: url('images/timeline_hero.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.timeline-hero-text {
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-ui);
+}
+
+
 /* FOOTER */
 footer {
   background: var(--navy-mid);
   border-top: 2px solid var(--gold);
-  padding: 28px 32px;
+  padding: 28px 100px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-brand h2 {
   font-family: var(--font-ui);
-  font-size: .95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--gold);
   letter-spacing: .16em;
@@ -221,12 +251,35 @@ footer {
   margin-top: 2px;
 }
 
+#footer-heading {
+  color: var(--gold-lt);
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  font-family: var(--font-ui);
+  gap: 100px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+.test {
+  display: flex;
+  justify-content: flex-end;
+}
 .footer-copy {
   font-family: var(--font-ui);
   font-size: .62rem;
   color: var(--muted);
   letter-spacing: .08em;
-  text-align: right;
 }
 
 @media (max-width: 600px) {
