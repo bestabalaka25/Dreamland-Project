@@ -14,7 +14,7 @@ const players = [
   },
   {
     name: 'Denis Law', role: 'Forward', era: '1958 – 1974 · 55 Caps',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Scotland_national_football_team_1900s.jpg/640px-Scotland_national_football_team_1900s.jpg',
+    img: 'https://i.dailymail.co.uk/1s/2025/01/17/21/94227717-0-image-a-134_1737150062870.jpg',
     bio: 'The King. Denis Law remains the most celebrated Scottish footballer of all time — a predatory forward whose instincts and flair brought Scotland to international prominence.',
     achievements: [
       { yr: '1958', text: 'Becomes the youngest ever Scotland debutant at just 18 years old.' },
@@ -26,7 +26,7 @@ const players = [
   },
   {
     name: 'James McFadden', role: 'Forward', era: '2002 – 2012 · 48 Caps',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Scotland_national_football_team_2022.jpg/960px-Scotland_national_football_team_2022.jpg',
+    img: 'https://images.mlssoccer.com/image/private/t_editorial_landscape_8_desktop_mobile/prd-league/qfyxvojt0ac9kiuqmavm.jpg',
     bio: 'A fan favourite whose audacious long-range strike against France in 2007 became one of Scotland\'s most cherished football moments of the modern era.',
     achievements: [
       { yr: '2002', text: 'International debut at 19; immediately regarded as one of Scotland\'s brightest prospects.' },
