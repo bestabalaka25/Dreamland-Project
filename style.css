@@ -1673,7 +1673,7 @@ footer {
   to   { opacity: 0; transform: scale(0.88) translateY(12px); }
 }
 
-/* ── QUIZ TRIGGER BUTTON ─────────────────────────────────────── */
+/* QUIZ TRIGGER BUTTON  */
 .quiz-trigger {
   position: fixed;
   right: 0;
