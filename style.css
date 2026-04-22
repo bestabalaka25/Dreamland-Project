@@ -670,6 +670,14 @@ nav {
   border: 2px solid var(--gold);
   box-shadow: 0 10px 30px rgba(0,0,0,.6);
 }
+.party-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 .party-video iframe {
   position: absolute;
@@ -706,6 +714,12 @@ nav {
   color: var(--muted);
   margin-top: 6px;
 }
+
+/* Stack on mobile */
+@media (max-width: 768px) {
+  .party-media {
+    grid-template-columns: 1fr;
+  }
 
 /* STORIES */
 #stories {
