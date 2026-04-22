@@ -629,6 +629,7 @@ nav {
   margin-top: 4px;
 }
 
+
 /* PARTY */
 #party {
   background: var(--navy);
@@ -670,14 +671,6 @@ nav {
   border: 2px solid var(--gold);
   box-shadow: 0 10px 30px rgba(0,0,0,.6);
 }
-.party-video video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: none;
-  object-fit: cover;
-  border-radius: 4px;
-}
 
 .party-video iframe {
   position: absolute;
@@ -714,12 +707,6 @@ nav {
   color: var(--muted);
   margin-top: 6px;
 }
-
-/* Stack on mobile */
-@media (max-width: 768px) {
-  .party-media {
-    grid-template-columns: 1fr;
-  }
 
 /* STORIES */
 #stories {
@@ -1030,6 +1017,7 @@ nav {
   letter-spacing: 2px;
 }
 
+/* New story cards pulse briefly when added */
 .story-card.new-story {
   animation: storyPop 0.5s ease forwards;
 }
@@ -1082,41 +1070,7 @@ footer {
   color: var(--muted);
   letter-spacing: .08em;
   text-align: right;
-}footer {
-  background: var(--navy-mid);
-  border-top: 2px solid var(--gold);
-  padding: 48px 32px 28px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1.5fr;
-  align-items: start;
-  gap: 2rem;
 }
-
-/* Brand column */
-.footer-brand h2 {
-  font-family: var(--font-ui);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  margin: 0 0 6px;
-}
-.footer-brand p {
-  font-family: var(--font-ui);
-  font-size: .68rem;
-  color: var(--gold);
-  letter-spacing: .1em;
-  opacity: .7;
-  margin: 0 0 4px;
-}
-.footer-note {
-  font-style: italic;
-  opacity: .5;
-  font-size: .62rem;
-  margin-top: 6px;
-}
-
 
 /* FADE-IN */
 .step {
@@ -1299,21 +1253,25 @@ footer {
   to   { transform: scale(1); }
 }
 
+/* Eyebrow text — slides up, fades in */
 .hero-eyebrow {
   opacity: 0;
   animation: slideUpFade 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
 }
 
+/* Main title — big bold slide up */
 .hero-title {
   opacity: 0;
   animation: slideUpFadeBig 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
 }
 
+/* Subtitle — slides up after title */
 .hero-sub {
   opacity: 0;
   animation: slideUpFade 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
 }
 
+/* CTA button — slides up last */
 .hero-inner .btn-primary {
   opacity: 0;
   animation: slideUpFade 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.3s forwards;
@@ -1329,6 +1287,7 @@ footer {
   to   { opacity: 1; transform: translateY(0) scaleY(1); }
 }
 
+/* Gold rule under hero title — width expands left to right */
 .hero-rule {
   width: 0;
   animation: expandWidth 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.1s forwards;
@@ -1518,7 +1477,7 @@ footer {
   to   { opacity: 0; transform: scale(0.88) translateY(12px); }
 }
 
-/* QUIZ TRIGGER BUTTON  */
+/* ── QUIZ TRIGGER BUTTON ─────────────────────────────────────── */
 .quiz-trigger {
   position: fixed;
   right: 0;
