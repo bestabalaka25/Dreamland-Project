@@ -214,7 +214,7 @@ nav {
 footer {
   background: var(--navy-mid);
   border-top: 2px solid var(--gold);
-  padding: 28px 100px;
+  padding: 28px 150px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -223,7 +223,7 @@ footer {
 .footer-brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .footer-brand h2 {
@@ -235,7 +235,7 @@ footer {
   text-transform: uppercase;
 }
 
-.footer-brand p {
+.footer-sub-headings{
   font-family: var(--font-ui);
   font-size: .64rem;
   color: var(--gold);
@@ -246,7 +246,7 @@ footer {
 
 .footer-note {
   font-style: italic;
-  opacity: .5;
+  opacity: .75;
   font-size: .6rem;
   margin-top: 2px;
 }
@@ -271,15 +271,14 @@ footer {
 .footer-links ul {
   list-style: none;
 }
-.test {
-  display: flex;
-  justify-content: flex-end;
-}
-.footer-copy {
+
+.footer-copy{
   font-family: var(--font-ui);
   font-size: .62rem;
   color: var(--muted);
   letter-spacing: .08em;
+
+  margin-top: auto;
 }
 
 @media (max-width: 600px) {
@@ -288,4 +287,6 @@ footer {
   nav { padding: 0 16px; }
   .nav-links { gap: 14px; }
   .nav-links a { font-size: .6rem; }
+  footer { padding: 28px; display: flex; gap: 50px; justify-content: center;}
+  .footer-copy { margin-top: 15px; }
 }
