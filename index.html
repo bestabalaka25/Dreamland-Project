@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!--  PLAYER PROFILE MODAL  -->
+  <!-- ── PLAYER PROFILE MODAL  -->
   <div class="modal-backdrop" id="playerModal" role="dialog" aria-modal="true">
     <div class="modal-box">
       <button class="modal-close" id="modalClose" aria-label="Close">&#10005;</button>
@@ -116,23 +116,58 @@
       <a href="#players" class="btn-primary">BEGIN JOURNEY</a>
     </div>
   </section>
-  
-  <!-- ── Timeline ── -->
-<section id="timeline">
-  <div class="timeline-container">
-    <!-- <div class="hero-image"></div> -->
-    
-    <div class="timeline-hero-text">
-        <h1 id="heading-text-h1" class="heading">Timeline</h1>
-        <p id="paragraph-text">Explore Scotland's FIFA World Cup journey through this interactive timeline. Scroll each year to relive the highs and lows of the nation's footballing history.</p>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="content-width">
+      <div class="section-header step">
+        <span class="section-tag">The Team</span>
+        <h2 class="section-title">ABOUT US</h2>
+        <p class="small-note">Click one of us to see our details</p>
+      </div>
+      <div class="team-grid step">
+        <div class="team-card" onclick="openTeamModal(0)">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <h4>Project Leader - Best A</h4>
+          <p>Full-Stack Developer</p>
+        </div>
+        <div class="team-card" onclick="openTeamModal(1)">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <h4>Frontend Dev - Jack W</h4>
+          <p>UI / Visual Design</p>
+        </div>
+        <div class="team-card" onclick="openTeamModal(2)">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <h4>Backend Dev - Wacka C</h4>
+          <p>Design &amp; Prototyping</p>
+        </div>
+      </div>
+      <div class="team-row-2 step">
+        <div class="team-card" onclick="openTeamModal(3)">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <h4>Content Research & Visual asset - Stephen C</h4>
+          <p>Research &amp; Video Creation</p>
+        </div>
+        <div class="team-card" onclick="openTeamModal(4)">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <h4>Visual asset & Media Designer - Mindy L</h4>
+          <p>Sourcing and preparing visual media assets</p>
+        </div>
+      </div>
     </div>
-    
-    <div class="timeline">
-        <!-- Timeline items will be dynamically generated here -->
-    </div>
-  </div>
-</section>
-<!-- PLAYERS -->
+  </section>
+
+  <!-- PLAYERS -->
   <section id="players">
     <div class="players-wrap content-width">
       <div class="section-header step">
@@ -318,30 +353,79 @@
     </div>
   </section>
 
-  <!-- FOOTBALL HISTORY -->
-<section id="party">
-  <div class="content-width party-wrap">
-
-    <div class="party-content step">
-      <span class="section-tag">History of Football</span>
-      <h2 class="section-title">BRIEF CONCEPT VIDEO ON FOOTBALL HISTORY</h2>
-      <p class="party-text">Football's origins date back over 2,000 years to ancient Chinese cuju, though the modern game was codified in 1863 in England.</p>
-      <p class="party-text">Today, FIFA oversees worldwide football, which has become the most popular sport, featuring massive leagues like the English Premier League.</p>
-    </div>
-
-    <div class="party-media step">
-    <div class="party-video">
-        <video controls playsinline preload="metadata">
-          <source src="videos/Video Concept 2.mp4" type="video/mp4"/>
-          Your browser does not support the video tag.
-        </video>
+  <!-- ── TIMELINE -->
+  <section id="matches">
+    <div class="content-width">
+      <div class="section-header step">
+        <span class="section-tag">World Cup Appearances</span>
+        <h2 class="section-title">TIMELINE</h2>
+      </div>
+      <div class="timeline-list">
+        <div class="tl-entry step">
+          <div class="tl-card">
+            <p class="tl-year">1974 &mdash; West Germany</p>
+            <p class="tl-event">Group Stage Exit</p>
+            <p class="tl-desc">Scotland become the only team to go unbeaten and fail to qualify. A draw with Brazil stands as a highlight of the tournament.</p>
+            <span class="tl-result d">Unbeaten &middot; Eliminated</span>
+          </div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+        <div class="tl-entry step">
+          <div class="tl-empty"></div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-card">
+            <p class="tl-year">1978 &mdash; Argentina</p>
+            <p class="tl-event">The Ally MacLeod Dream</p>
+            <p class="tl-desc">Archie Gemmill scores that goal. 3&ndash;2 vs Netherlands. Scotland go out on goal difference. A nation heartbroken.</p>
+            <span class="tl-result l">Eliminated &middot; Group Stage</span>
+          </div>
+        </div>
+        <div class="tl-entry step">
+          <div class="tl-card">
+            <p class="tl-year">1982 &mdash; Spain</p>
+            <p class="tl-event">Group Stage Exit</p>
+            <p class="tl-desc">Another solid campaign undone by goal difference. Brazil and USSR prove too strong despite brave performances.</p>
+            <span class="tl-result l">Eliminated &middot; Group Stage</span>
+          </div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+        <div class="tl-entry step">
+          <div class="tl-empty"></div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-card">
+            <p class="tl-year">1986 &mdash; Mexico</p>
+            <p class="tl-event">Strachan's Finest Hour</p>
+            <p class="tl-desc">Gordon Strachan shines in the Mexican heat as Scotland beat Denmark before bowing out of the tournament.</p>
+            <span class="tl-result l">Eliminated &middot; Group Stage</span>
+          </div>
+        </div>
+        <div class="tl-entry step">
+          <div class="tl-card">
+            <p class="tl-year">1990 &mdash; Italy</p>
+            <p class="tl-event">Italia '90</p>
+            <p class="tl-desc">Jim Leighton and Mo Johnston lead Scotland in a bruising group including Brazil. Out on goal difference again.</p>
+            <span class="tl-result l">Eliminated &middot; Group Stage</span>
+          </div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+        <div class="tl-entry step">
+          <div class="tl-empty"></div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-card">
+            <p class="tl-year">1998 &mdash; France</p>
+            <p class="tl-event">The Final Chapter</p>
+            <p class="tl-desc">Scotland's last World Cup to date. They open the tournament against Brazil at the Stade de France. A nation's last hurrah.</p>
+            <span class="tl-result l">Eliminated &middot; Group Stage</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- NO SCOTLAND NO PARTY -->
+  <!-- ── NO SCOTLAND NO PARTY ──────────────────────────────────── -->
   <section id="party">
     <div class="content-width party-wrap">
       <div class="party-content step">
@@ -351,7 +435,8 @@
         <p class="party-text">"No Scotland, no party" became a rallying cry for generations of fans who followed the team across Europe and beyond, bringing blue shirts, bagpipes, flags, and unstoppable energy.</p>
       </div>
       <div class="party-media step">
-        <div class="party-video"><iframe src="https://www.youtube.com/embed/Qg2hi0Dom4k"title="Scotland's Most Iconic World Cup Chant"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+        <div class="party-video">
+          <iframe src="https://www.youtube.com/embed/9K0nB6eT57U" title="Scotland's Most Iconic World Cup Goals" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="party-highlight card-float">
           <p class="party-highlight-label">Supporters' Motto</p>
@@ -362,7 +447,7 @@
     </div>
   </section>
 
-  <!-- STORIES  -->
+  <!-- ── STORIES ───────────────────────────────────────────────── -->
   <section id="stories">
     <div class="content-width">
       <div class="stories-header-row step">
@@ -427,7 +512,7 @@
     </div>
   </section>
 
-  <!-- ── FAQS -->
+  <!-- ── FAQS ──────────────────────────────────────────────────── -->
   <section id="faqs">
     <div class="content-width">
       <div class="section-header step">
@@ -487,57 +572,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="content-width">
-      <div class="section-header step">
-        <span class="section-tag">The Team</span>
-        <h2 class="section-title">ABOUT US</h2>
-        <p class="small-note">Click one of us to see our details</p>
-      </div>
-      <div class="team-grid step">
-        <div class="team-card" onclick="openTeamModal(0)">
-          <div class="avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          </div>
-          <h4>Project Leader - Best A</h4>
-          <p>Full-Stack Developer</p>
-        </div>
-        <div class="team-card" onclick="openTeamModal(1)">
-          <div class="avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          </div>
-          <h4>Frontend Dev - Jack W</h4>
-          <p>UI / Visual Design</p>
-        </div>
-        <div class="team-card" onclick="openTeamModal(2)">
-          <div class="avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          </div>
-          <h4>Backend Dev - Wacka C</h4>
-          <p>Design &amp; Prototyping</p>
-        </div>
-      </div>
-      <div class="team-row-2 step">
-        <div class="team-card" onclick="openTeamModal(3)">
-          <div class="avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          </div>
-          <h4>Content Research & Visual asset - Stephen C</h4>
-          <p>Research &amp; Video Creation</p>
-        </div>
-        <div class="team-card" onclick="openTeamModal(4)">
-          <div class="avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          </div>
-          <h4>Visual asset & Media Designer - Mindy L</h4>
-          <p>Sourcing and preparing visual media assets</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- ── FOOTER  -->
+  <!-- ── FOOTER  -->
   <footer>
     <div class="footer-brand">
       <h2>DREAMLAND</h2>
@@ -545,28 +580,11 @@
       <p class="footer-note">An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.</p>
     </div>
     <p class="footer-copy">&copy; 2026 Dreamland Project<br>Built with HTML, CSS, and JavaScript</p>
-    <div class="footer-links">
-    <ul class="footer-nav-links">
-      <li class="heading">Quick Links</li>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#matches">Timeline</a></li>
-      <li><a href="#players">Players</a></li>
-      <li><a href="#party">No Party</a></li>
-      <li><a href="#stories">Stories</a></li>
-    </ul>
-
-    <ul class="footer-credit-links">
-      <li class="heading">Credits</li>
-      <li><a href="#linkedin1">Team Member 1</a></li>
-      <li><a href="#linkedin2">Team Member 2</a></li>
-      <li><a href="#linkedin3">Team Member 3</a></li>
-      <li><a href="#linkedin4">Team Member 4</a></li>
-      <li><a href="#linkedin5">Team Member 5</a></li>
-    </ul>
-  </div>
   </footer>
 
-  <!--  QUIZ PANEL  -->
+  <!-- ── SCRIPTS ───────────────────────────────────────────────── -->
+  <script src="script.js"></script>
+  <!-- ── QUIZ PANEL ──────────────────────────────────────────── -->
 <button class="quiz-trigger" id="quizTrigger" aria-label="Take the quiz">
   <span class="quiz-trigger-icon">&#9733;</span>
   <span class="quiz-trigger-label">QUIZ</span>
@@ -604,8 +622,6 @@
     <button class="quiz-btn-primary" id="quizRestart">Play Again</button>
   </div>
 </div>
-
-  <!-- SCRIPTS -->
-  <script src="main.js"></script>
 </body>
 </html>
+
