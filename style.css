@@ -856,6 +856,12 @@ nav {
 }
 
 .history-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
   object-fit: contain;
   background: #000;
 }
@@ -1304,7 +1310,8 @@ footer {
   .players-page.active { grid-template-columns: repeat(2, 1fr); }
   .modal-box { grid-template-columns: 1fr; }
   .modal-img { min-height: 240px; height: 240px; }
-  .party-wrap { grid-template-columns: 1fr; }
+  .party-wrap,
+  .history-wrap { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -1426,14 +1433,9 @@ footer {
   opacity: .8;
 }
 
-@media (max-width: 600px) {
-  .team-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .team-row-2 {
-    grid-template-columns: 1fr;
-  }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .faq-card { flex: 0 0 calc(50% - 0.75rem); }
+  .players-page.active { grid-template-columns: repeat(2, 1fr); }
 }
 
 /*ANIMATIONS*/
@@ -1679,7 +1681,7 @@ footer {
   to   { opacity: 0; transform: scale(0.88) translateY(12px); }
 }
 
-/* ── QUIZ TRIGGER BUTTON ─────────────────────────────────────── */
+/* QUIZ TRIGGER BUTTON  */
 .quiz-trigger {
   position: fixed;
   right: 0;
@@ -1733,24 +1735,32 @@ footer {
 }
 .quiz-panel {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 420px;
-  max-width: 100vw;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -44%) scale(0.96);
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
   background: #0a1220;
-  border-left: 3px solid #c9a227;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-top: 4px solid #c9a227;
+  border-radius: 4px;
   z-index: 170;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s, transform 0.35s;
   display: flex;
   flex-direction: column;
   padding: 3rem 2rem 2rem;
-  overflow-y: auto;
 }
+
 .quiz-panel.open {
-  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
 }
+
 .quiz-close {
   position: absolute;
   top: 1.2rem;
