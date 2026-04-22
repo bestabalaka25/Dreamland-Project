@@ -1174,15 +1174,6 @@ footer {
   opacity: 1;
   color: var(--gold);
 }
-
-/* Responsive — stack on mobile */
-@media (max-width: 768px) {
-  footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 36px 24px 24px;
-  }
-}
   .footer-links {
     justify-content: center;
     gap: 2rem;
