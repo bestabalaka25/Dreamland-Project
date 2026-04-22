@@ -14,7 +14,7 @@ const players = [
   },
   {
     name: 'Denis Law', role: 'Forward', era: '1958 – 1974 · 55 Caps',
-    img: 'https://i.dailymail.co.uk/1s/2025/01/17/21/94227717-0-image-a-134_1737150062870.jpg',
+    img: 'https://i.dailymail.co.uk/1s/2025/01/17/21/94227717-0-image-a-134_1737150062870.jpg?anchor=center&mode=crop&width=800&height=600&rnd=131862648430000000',
     bio: 'The King. Denis Law remains the most celebrated Scottish footballer of all time — a predatory forward whose instincts and flair brought Scotland to international prominence.',
     achievements: [
       { yr: '1958', text: 'Becomes the youngest ever Scotland debutant at just 18 years old.' },
