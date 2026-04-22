@@ -558,3 +558,34 @@ document.addEventListener('DOMContentLoaded', function () {
   beginBtn.addEventListener('click', startQuiz);
   restartBtn.addEventListener('click', startQuiz);
 });
+
+// BURGER MENU //
+(function () {
+  const burger   = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
+  if (!burger) return;
+
+  burger.addEventListener('click', function () {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
