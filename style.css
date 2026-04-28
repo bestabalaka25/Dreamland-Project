@@ -17,7 +17,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden;}
+html { scroll-behavior: smooth;}
 
 body {
   background: var(--navy);
@@ -270,6 +270,141 @@ nav {
   box-shadow: 0 6px 18px rgba(0,0,0,.35);
 }
 
+
+/* TIMELINE */
+
+.timeline-hero-text {
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-hero);
+}
+
+#scroll {
+  position: relative;
+  display: flex;
+}
+
+.sticky-background {
+  position: fixed;
+}
+
+article {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.year {
+  display: flex;
+  height: 100vh;
+  width: 800px;
+  padding: 50px;
+  color: var(--gold);
+  background-color: var(--navy);
+  opacity: 0;
+  transition: 1.5s ease-in-out;
+}
+
+.year-content-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.year-content {
+  margin: 50px;
+}
+
+.year-content h1 {
+  font-family: var(--font-hero);
+}
+
+#timeline-host-flag-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+#timeline-host-flag {
+  width: 45px;
+  height: auto;
+  display: flex;
+}
+
+.year-content p {
+  color: var(--muted) ;
+  margin: 25px 0px;
+  font-size: 18px;
+  font-family: var(--font-ui);
+}
+
+#timeline-main-img {
+  border: 5px #f5f5f5 solid;
+  max-width: 600px;
+  max-height: 500px;
+}
+
+#scroll figure {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--gold);
+  display: flex;
+  /*opacity: 0;*/
+}
+
+#scroll figure p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.is-active {
+  opacity: 1 !important;
+}
+
+.marker:hover {
+  cursor: pointer;
+}
+
+.marker.is-active { 
+  opacity: 0 !important;
+}
+
+.infoPopup .mapboxgl-popup-content {
+  background-color: #33333390;
+  backdrop-filter: blur(0.5px);
+  border-radius: 8px;
+  color: #aab0b4;
+  text-shadow: 0px 0px 10px #000000;
+  box-shadow: 0px 0px 10px #00000075;
+  padding: 0px;
+}
+
+.infoPopup .mapboxgl-popup-tip {
+  border-top-color: #33333375 !important;
+}
+
+.infoPopup h3 {
+  padding: 5px 10px;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* ABOUT */
 #about {
   background: var(--navy-mid);
@@ -279,7 +414,7 @@ nav {
 
 .section-header {
   text-align: center;
-  margin-bottom: 52px;
+  margin-bottom: 50px;
 }
 
 .section-header.left {
@@ -381,7 +516,7 @@ nav {
 /* PLAYERS */
 #players {
   background: var(--navy);
-  ;
+  margin-top: 50px;
 }
 
 .players-wrap {
@@ -1587,58 +1722,6 @@ footer {
   to { transform: translateY(0); }
 }
 
-
-/* TIMELINE — entries slide in from alternate sides */
-
-.timeline-hero-text {
-  padding: 2rem;
-  text-align: center;
-  font-family: var(--font-ui);
-}
-
-.tl-entry .tl-card {
-  opacity: 0;
-  transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Left-side cards slide from the left */
-.tl-entry:nth-child(odd) .tl-card {
-  transform: translateX(-60px);
-}
-
-/* Right-side cards slide from the right */
-.tl-entry:nth-child(even) .tl-card {
-  transform: translateX(60px);
-}
-
-.tl-entry .tl-card.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Timeline dot pulses in */
-.tl-dot {
-  transform: scale(0);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.tl-dot.visible {
-  transform: scale(1);
-}
-
-/* Dot gets a gold pulse ring when it appears */
-.tl-dot.visible::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid rgba(201, 162, 39, 0.4);
-  animation: dotRing 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-@keyframes dotRing {
-  from { transform: scale(0.6); opacity: 1; }
-  to   { transform: scale(1.8); opacity: 0; }
-}
 
 /* STORY DELETE BUTTON */
 .story-card {
