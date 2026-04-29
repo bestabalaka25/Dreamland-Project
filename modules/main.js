@@ -1,5 +1,3 @@
-import '../style.css';
-
 // PLAYERS DATA //
 const players = [
   {
