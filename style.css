@@ -274,7 +274,7 @@ nav {
 /* TIMELINE */
 
 .timeline-hero-text {
-  padding: 2rem;
+  padding: 5rem;
   text-align: center;
   font-family: var(--font-hero);
 }
@@ -298,7 +298,7 @@ article {
 
 .year {
   display: flex;
-  height: 100vh;
+  height: auto;
   width: 800px;
   padding: 50px;
   color: var(--gold);
@@ -310,10 +310,13 @@ article {
 .year-content-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .year-content {
-  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .year-content h1 {
@@ -336,13 +339,19 @@ article {
 .year-content p {
   color: var(--muted) ;
   margin: 25px 0px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: var(--font-ui);
+  white-space: pre-wrap;
+}
+
+#year-fact {
+  color: var(--gold);
+  font-family: var(--font-hero);
 }
 
 #timeline-main-img {
   border: 5px #f5f5f5 solid;
-  max-width: 600px;
+  max-width: 100%;
   max-height: 500px;
 }
 

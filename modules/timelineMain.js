@@ -21,6 +21,7 @@ const run = async () => {
                     <div id="timeline-host-flag-container">${item.flagSrc}</div>
                 </div>
                 <p>${item.para}</p>
+                <p><span id="year-fact">Did You Know?</span><br>${item.fact}</p>
                 <img id="timeline-main-img" src="${item.imgSrc}" alt="${item.imgAlt}">
             </div>
         </div>    
