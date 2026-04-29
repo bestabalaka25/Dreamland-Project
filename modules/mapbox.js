@@ -6,15 +6,16 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 const createMap = (data) => {	// Create a map instance
 	const map = new mapboxgl.Map({  // Add stuff to map
 		container: 'map', // container ID
-		style: 'mapbox://styles/mapbox/standard', // style URL
+		style: 'mapbox://styles/mapbox/dark-v11', // style URL
 		center: [0.472944, 44.42004], // starting position [lng, lat]
-		zoom: 5.0, // starting zoom
+		zoom: 5,
+		minZoom: 3 // starting zoom
 	});
-
+/*
 	map.on('style.load', () => {
     map.setConfigProperty('basemap', 'lightPreset', 'night');
 	});
-	
+*/	
 	const markersById = {};
 	let markerClicked = false;
 
