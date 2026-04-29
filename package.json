@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+     "deploy": "gh-pages -d dist"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bestabalaka25/Dreamland-Project.git"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,10 +22,12 @@
   "bugs": {
     "url": "https://github.com/bestabalaka25/Dreamland-Project/issues"
   },
-  "homepage": "https://github.com/bestabalaka25/Dreamland-Project#readme",
+
+  "homepage": "https://bestabalaka25.github.io/Dreamland-Project/",
   "devDependencies": {
     "vite": "^8.0.0"
   },
+  
   "dependencies": {
     "mapbox-gl": "^3.22.0",
     "scrollama": "^3.2.0"

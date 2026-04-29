@@ -1,4 +1,4 @@
-import '../style.css';
+import './timelineMain.js';
 
 // PLAYERS DATA //
 const players = [

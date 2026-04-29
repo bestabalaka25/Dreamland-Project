@@ -1,2 +1,5 @@
 .env
 dist/
+docs/
+.vite/
+node_modules/
