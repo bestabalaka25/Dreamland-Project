@@ -2254,6 +2254,67 @@ footer {
   .modal-img         { min-height: 200px; height: 200px; }
   .quiz-trigger      { padding: 0.75rem 0.45rem; }
 
+
+  /* Timeline */
+
+  .year {
+    height: auto;
+    width: 100%;
+    padding: 37.5px;
+    color: var(--gold);
+    background-color: #0a0e1a40;
+    opacity: 0;
+    transition: 1.5s ease-in-out;
+  }
+
+  article {
+    position: relative;
+    z-index: 2;
+  }
+
+  #timeline-host-flag {
+    width: 45px;
+    height: auto;
+    display: flex;
+  }
+
+  .year-content p {
+    color: var(--muted) ;
+    margin: 25px 0px;
+    font-size: 12px;
+    font-family: var(--font-ui);
+    white-space: pre-wrap;
+  }
+
+  #timeline-main-img {
+    border: 5px #f5f5f5 solid;
+    max-width: 100%;
+    max-height: 500px;
+  }
+
+  #scroll figure {
+    height: 100vh;
+    z-index: 1;  
+  }
+
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+
+  #scroll {
+    position: relative;
+    display: grid;
+    grid-template-areas: "overlap";
+  }
+
+  #scroll figure, 
+  #scroll article {
+    grid-area: overlap;
+    pointer-events: none;
+  }
+
+
   /* Footer */
   footer         { grid-template-columns: 1fr; padding: 40px 25px;}
   .footer-links { flex-direction: column; gap: 30px; grid-row: 2; grid-column: 1; justify-content: start;}
@@ -2265,7 +2326,18 @@ footer {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
+  /* TIMELINE */
+
+  .year {
+    width: 400px;
+    padding: 25px;
+  }
+
   .faq-card { flex: 0 0 calc(50% - 0.75rem); }
+
+
+  /* FOOTER */
 
   footer { grid-template-columns: 3fr; padding: 60px 50px;}
   .footer-links { grid-row: 2; grid-column: 1; justify-content: start;}
