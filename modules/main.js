@@ -151,7 +151,6 @@ function swipeCard(event, btn, dir) {
   if (hint) hint.textContent = 'View Profile';
   dots.forEach((d, i)  => d.classList.toggle('active', i === next));
 }
-
 function handleCardClick(event, playerIndex) {
   if (event.target.classList.contains('media-arrow')) return;
   const card = event.currentTarget;
@@ -605,3 +604,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 })();
+window.handleCardClick = handleCardClick;
+window.swipeCard = swipeCard;
+window.changePage = changePage;
+window.goPage = goPage;
+window.scrollStories = scrollStories;
