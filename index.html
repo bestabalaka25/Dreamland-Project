@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/Dreamland-Project/assets/dreamlandlogo-DLmBmShR.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Dreamland-Project/assets/dreamlandlogo-DLmBmShR.png">
+  <title>Dreamland — Scotland's World Cup Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css' rel='stylesheet' />
+  <script type="module" crossorigin src="/Dreamland-Project/assets/index-CIpy200Z.js"></script>
+  <link rel="stylesheet" crossorigin href="/Dreamland-Project/assets/index-BRKtuGQv.css">
+</head>
+<body>
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#home" class="nav-logo">DREAMLAND</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+      <li><a href="#home"    data-section="home">HOME</a></li>
+      <li><a href="#players" data-section="players">PLAYERS</a></li>
+      <li><a href="#matches" data-section="matches">TIMELINE</a></li>
+      <li><a href="#history" data-section="history">HISTORY</a></li>
+      <li><a href="#party"   data-section="party">NO PARTY</a></li>
+      <li><a href="#stories" data-section="stories">STORIES</a></li>
+      <li><a href="#faqs"    data-section="faqs">FAQS</a></li>
+    </ul>
+  </nav>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Scotland's World Cup Journey &middot; 1974&ndash;2026</p>
+        <h1 class="hero-title">DREAMLAND</h1>
+        <p class="hero-sub">An interactive documentary celebrating Scotland's World Cup journey. Built with passion by fans, for fans.</p>
+        <a href="#timeline" class="btn-primary">BEGIN JOURNEY</a>
+      </div>
+    </section>
+    
+    <!-- Timeline -->
+    <section id="timeline">
+      <div class="timeline-hero-text">
+        <h2 class="section-title">Timeline</h2>
+        <p class="small-note">
+          Scroll through Scotland's World Cup history using the interactive timeline to relive the nation's biggest moments on the world stage.
+          <br/>
+          Move through the tournaments and click on the map markers to zoom in and out of stadium locations.
+        </p>
+      </div>
+        <div id="scroll">
+          <article>
+            <div class="tournament-years">
+              <!-- timeline data -->
+            </div>
+          </article>
+
+          <figure>
+            <p class="sideImg">0</p>
+            <div id="map">
+              <!-- map data -->
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYERS -->
+    <section id="players">
+      <div class="players-wrap content-width">
+        <div class="section-header step">
+          <span class="section-tag">Legends of the Grass</span>
+          <h2 class="section-title">PLAYER PROFILES</h2>
+          <p class="small-note">Click a card to view profile &nbsp;&middot;&nbsp; Swipe &#8592; &#8594; to watch highlights</p>
+          <p class="small-note">Credits to all creators of the Youtube montage vidoes used in this documentary. (For educational Purposes)</p>
+        </div>
+
+        <!-- ACTIVE PLAYER PAGE -->
+        <div class="players-page active" id="pg-0">
+
+          <div class="player-thumb step card-float" data-panel="0"
+              data-video="https://www.youtube.com/embed/xdHk7Ou4m7Y?si=o0iEXJH7xnC5ibrt"
+              onclick="handleCardClick(event, 0)">
+            <div class="player-media-track">
+              <div class="player-media-panel">
+                <div class="player-thumb-img">
+                  <img src="https://sshf.sportscotland.org.uk/media/1235/archie_gemmill_4.jpg?anchor=center&mode=crop&width=800&height=600&rnd=131862648430000000" alt="Archie Gemmill"/>
+                </div>
+              </div>
+              <div class="player-media-panel video-panel">
+                <span class="video-label">&#9654; Highlights</span>
+              </div>
+            </div>
+            <button class="media-arrow left"  onclick="swipeCard(event, this, -1)" aria-label="Photo">&#8592;</button>
+            <button class="media-arrow right" onclick="swipeCard(event, this,  1)" aria-label="Video">&#9654;</button>
+            <div class="media-dots">
+              <div class="media-dot active"></div>
+              <div class="media-dot"></div>
+            </div>
+            <div class="player-thumb-overlay">
+              <p class="player-thumb-name">Archie Gemmill</p>
+              <p class="player-thumb-pos">Midfielder &middot; 1971&ndash;1981</p>
+            </div>
+          </div>
+
+          <div class="player-thumb step card-float" data-panel="0"
+              data-video="https://www.youtube.com/watch?v=UYcKfdVVHDA"
+              onclick="handleCardClick(event, 1)">
+            <div class="player-media-track">
+              <div class="player-media-panel">
+                <div class="player-thumb-img">
+                  <img src="https://i.dailymail.co.uk/1s/2025/01/17/21/94227717-0-image-a-134_1737150062870.jpg?anchor=center&mode=crop&width=800&height=600&rnd=131862648430000000" alt="Denis Law"/>
+                </div>
+              </div>
+              <div class="player-media-panel video-panel">
+                <span class="video-label">&#9654; Highlights</span>
+              </div>
+            </div>
+            <button class="media-arrow left"  onclick="swipeCard(event, this, -1)" aria-label="Photo">&#8592;</button>
+            <button class="media-arrow right" onclick="swipeCard(event, this,  1)" aria-label="Video">&#9654;</button>
+            <div class="media-dots">
+              <div class="media-dot active"></div>
+              <div class="media-dot"></div>
+            </div>
+            <div class="player-thumb-overlay">
+              <p class="player-thumb-name">Denis Law</p>
+              <p class="player-thumb-pos">Forward &middot; 1958&ndash;1974</p>
+            </div>
+          </div>
+
+          <div class="player-thumb step card-float" data-panel="0"
+              data-video="https://www.youtube.com/embed/cPlcSa21yZg?si=RNThM2F25oQ5d4z7"
+              onclick="handleCardClick(event, 2)">
+            <div class="player-media-track">
+              <div class="player-media-panel">
+                <div class="player-thumb-img">
+                  <img src="https://images.mlssoccer.com/image/private/t_editorial_landscape_8_desktop_mobile/prd-league/qfyxvojt0ac9kiuqmavm.jpg" alt="James McFadden"/>
+                </div>
+              </div>
+              <div class="player-media-panel video-panel">
+                <span class="video-label">&#9654; Highlights</span>
+              </div>
+            </div>
+            <button class="media-arrow left"  onclick="swipeCard(event, this, -1)" aria-label="Photo">&#8592;</button>
+            <button class="media-arrow right" onclick="swipeCard(event, this,  1)" aria-label="Video">&#9654;</button>
+            <div class="media-dots">
+              <div class="media-dot active"></div>
+              <div class="media-dot"></div>
+            </div>
+            <div class="player-thumb-overlay">
+              <p class="player-thumb-name">James McFadden</p>
+              <p class="player-thumb-pos">Forward &middot; 2002&ndash;2012</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Page 1 -->
+        <div class="players-page" id="pg-1">
+          <div class="player-thumb step card-float" data-panel="0"
+              data-video="https://www.youtube.com/embed/sjoXRmBBCNs?si=BEnRui9vkx04JygZ"
+              onclick="handleCardClick(event, 3)">
+            <div class="player-media-track">
+              <div class="player-media-panel">
+                <div class="player-thumb-img">
+                  <img src="https://pbs.twimg.com/media/ESRusjwXkAQrll7.jpg" alt="Kenny Dalglish"/>
+                </div>
+              </div>
+              <div class="player-media-panel video-panel">
+                <span class="video-label">&#9654; Highlights</span>
+              </div>
+            </div>
+            <button class="media-arrow left"  onclick="swipeCard(event, this, -1)" aria-label="Photo">&#8592;</button>
+            <button class="media-arrow right" onclick="swipeCard(event, this,  1)" aria-label="Video">&#9654;</button>
+            <div class="media-dots">
+              <div class="media-dot active"></div>
+              <div class="media-dot"></div>
+            </div>
+            <div class="player-thumb-overlay">
+              <p class="player-thumb-name">Kenny Dalglish</p>
+              <p class="player-thumb-pos">Forward &middot; 1971&ndash;1987</p>
+            </div>
+          </div>
+
+          <div class="player-thumb step card-float" data-panel="0"
+              data-video="https://www.youtube.com/embed/oBEmrJCbGIY?rel=0&modestbranding=1"
+              onclick="handleCardClick(event, 4)">
+            <div class="player-media-track">
+              <div class="player-media-panel">
+                <div class="player-thumb-img">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Scotland_v_England_1977.jpg/640px-Scotland_v_England_1977.jpg" alt="Gordon Strachan"/>
+                </div>
+              </div>
+              <div class="player-media-panel video-panel">
+                <span class="video-label">&#9654; Highlights</span>
+              </div>
+            </div>
+            <span class="player-thumb-hint">View Profile</span>
+            <button class="media-arrow left"  onclick="swipeCard(event, this, -1)" aria-label="Photo">&#8592;</button>
+            <button class="media-arrow right" onclick="swipeCard(event, this,  1)" aria-label="Video">&#9654;</button>
+            <div class="media-dots">
+              <div class="media-dot active"></div>
+              <div class="media-dot"></div>
+            </div>
+            <div class="player-thumb-overlay">
+              <p class="player-thumb-name">Gordon Strachan</p>
+              <p class="player-thumb-pos">Midfielder &middot; 1980&ndash;1992</p>
+            </div>
+          </div>
+
+          <div class="player-thumb step card-float" data-panel="0"
+              data-video="https://www.youtube.com/embed/Zx8OUvjTbI4?rel=0&modestbranding=1"
+              onclick="handleCardClick(event, 5)">
+            <div class="player-media-track">
+              <div class="player-media-panel">
+                <div class="player-thumb-img">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Celtic_FC_team_photo_1888.jpg/640px-Celtic_FC_team_photo_1888.jpg" alt="Jim Leighton"/>
+                </div>
+              </div>
+              <div class="player-media-panel video-panel">
+                <span class="video-label">&#9654; Highlights</span>
+              </div>
+            </div>
+            <button class="media-arrow left"  onclick="swipeCard(event, this, -1)" aria-label="Photo">&#8592;</button>
+            <button class="media-arrow right" onclick="swipeCard(event, this,  1)" aria-label="Video">&#9654;</button>
+            <div class="media-dots">
+              <div class="media-dot active"></div>
+              <div class="media-dot"></div>
+            </div>
+            <div class="player-thumb-overlay">
+              <p class="player-thumb-name">Jim Leighton</p>
+              <p class="player-thumb-pos">Goalkeeper &middot; 1982&ndash;1998</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="players-pagination step">
+          <button class="pg-btn" id="prevBtn" disabled onclick="changePage(-1)">&#8592; Prev</button>
+          <div class="pg-dots">
+            <div class="pg-dot active" onclick="goPage(0)"></div>
+            <div class="pg-dot" onclick="goPage(1)"></div>
+          </div>
+          <button class="pg-btn" id="nextBtn" onclick="changePage(1)">Next &#8594;</button>
+        </div>
+      </div>
+
+      <!--  PLAYER PROFILE MODEL  -->
+      <div class="modal-backdrop" id="playerModal" role="dialog" aria-modal="true">
+        <div class="modal-box">
+          <button class="modal-close" id="modalClose" aria-label="Close">&#10005;</button>
+          <div class="modal-img">
+            <img id="modalImg" src="" alt=""/>
+            <div class="modal-img-overlay"></div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <p class="modal-era" id="modalEra"></p>
+              <h2 class="modal-name" id="modalName"></h2>
+              <p class="modal-role" id="modalRole"></p>
+            </div>
+            <p class="modal-bio" id="modalBio"></p>
+            <div>
+              <p class="modal-ach-label">Career Achievements</p>
+              <ul class="modal-ach-list" id="modalAchList"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTBALL HISTORY -->
+    <section id="history">
+      <div class="content-width history-wrap">
+        <div class="history-content step">
+          <span class="section-tag">Scotland's World Cup Journey</span>
+          <h2 class="section-title">SCOTLAND'S WORLD CUP HISTORY</h2>
+          <p class="history-text">Scotland's World Cup story began in 1954 with their very first appearance in Switzerland. From there, the nation qualified for eight tournaments across four decades — 1954, 1958, 1974, 1978, 1982, 1986, 1990 and 1998 — each campaign carrying the hopes of an entire nation, and each ending at the group stage in circumstances that still sting today.</p>
+          <p class="history-text">The 1974 draw with Brazil, Archie Gemmill's breathtaking solo goal against the Netherlands in 1978, and the emotional farewell of France 1998 are moments etched into Scottish football history. Since 1998, qualification has proved elusive — but the dream remains alive, and Scotland continue to fight for a return to the World Cup stage in 2026 and beyond.</p>
+        </div>
+        <div class="history-media step">
+          <div class="history-video">
+            <video controls playsinline preload="metadata">
+              <source src="/Dreamland-Project/assets/Dreamland-Intro-Video-CntZzEFr.mp4" type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NO SCOTLAND NO PARTY -->
+    <section id="party">
+      <div class="content-width party-wrap">
+        <div class="party-content step">
+          <span class="section-tag">Tartan Army</span>
+          <h2 class="section-title">NO SCOTLAND, NO PARTY</h2>
+          <p class="party-text">From Wembley in 1977 to France 98, the Tartan Army turned Scotland's football journey into a travelling celebration of song, colour, and hope. Win or lose, the supporters made every tournament feel bigger than the scoreboard.</p>
+          <p class="party-text">"No Scotland, no party" became a rallying cry for generations of fans who followed the team across Europe and beyond, bringing blue shirts, bagpipes, flags, and unstoppable energy.</p>
+          <p class="party-text">Credit to Football Culture (PI ALFA) for the amazing video!</p>
+        </div>
+        <div class="party-media step">
+          <div class="party-video"><iframe src="https://www.youtube.com/embed/Qg2hi0Dom4k"title="Scotland's Most Iconic World Cup Chant"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+          </div>
+          <div class="party-highlight card-float">
+            <p class="party-highlight-label">Supporters' Motto</p>
+            <p class="party-highlight-quote">"No Scotland, No Party"</p>
+            <p class="party-highlight-note">A chant that sums up the spirit of the Tartan Army — football as a celebration, whatever the score.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORIES  -->
+    <section id="stories">
+      <div class="content-width">
+        <div class="stories-header-row step">
+          <div class="section-header left">
+            <span class="section-tag">Fan Voices</span>
+            <h2 class="section-title">DISCOVER<br>FAN STORIES</h2>
+          </div>
+          <div class="scotland-badge">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="48" fill="none" stroke="#c9a227" stroke-width="2"/>
+              <text x="50" y="58" text-anchor="middle" font-size="36" fill="#c9a227">&#9917;</text>
+            </svg>
+          </div>
+        </div>
+        <div class="stories-scroll-wrap step">
+          <div class="stories-track" id="storiesTrack">
+            <div class="story-card red card-float">
+              <p class="story-year">1978</p>
+              <p class="story-quote">"I cried when Gemmill scored. I cried harder when we went out on goal difference."</p>
+              <p class="story-name">&mdash; Robert McAllister</p>
+              <p class="story-game">Game Watched: Scotland 3&ndash;2 Netherlands</p>
+            </div>
+            <div class="story-card green card-float">
+              <p class="story-year">1974</p>
+              <p class="story-quote">"We were the only unbeaten side to go home. That still hurts forty years on."</p>
+              <p class="story-name">&mdash; Margaret Dunbar</p>
+              <p class="story-game">Game Watched: Scotland 0&ndash;0 Brazil</p>
+            </div>
+            <div class="story-card gold card-float">
+              <p class="story-year">1998</p>
+              <p class="story-quote">"Standing in the Stade de France with ten thousand Scots. I'll never forget those colours."</p>
+              <p class="story-name">&mdash; Callum Fraser</p>
+              <p class="story-game">Game Watched: Scotland 1&ndash;2 Brazil</p>
+            </div>
+            <div class="story-card dark card-float">
+              <p class="story-year">1982</p>
+              <p class="story-quote">"We had the talent to go further. Spain '82 should have been our year."</p>
+              <p class="story-name">&mdash; Ian Morrison</p>
+              <p class="story-game">Game Watched: Scotland 2&ndash;2 USSR</p>
+            </div>
+            <div class="story-card deep card-float">
+              <p class="story-year">1986</p>
+              <p class="story-quote">"Strachan's goal in Mexico &mdash; the whole pub erupted. Pure joy in the summer heat."</p>
+              <p class="story-name">&mdash; Fiona Campbell</p>
+              <p class="story-game">Game Watched: Scotland 1&ndash;0 Denmark</p>
+            </div>
+            <div class="story-card green card-float">
+              <p class="story-year">1990</p>
+              <p class="story-quote">"Italia '90 broke our hearts but we were there, we were loud, we were Scotland."</p>
+              <p class="story-name">&mdash; Douglas Reid</p>
+              <p class="story-game">Game Watched: Scotland 2&ndash;1 Sweden</p>
+            </div>
+          </div>
+        </div>
+        <div class="stories-nav">
+          <button class="scroll-btn" onclick="scrollStories(-1)" aria-label="Scroll left">&#8592;</button>
+          <button class="scroll-btn" onclick="scrollStories(1)" aria-label="Scroll right">&#8594;</button>
+        </div>
+        <div class="stories-submit-wrap step">
+          <button class="btn-submit-story" id="openStoryForm">&#9998; Share Your Story</button>
+        </div>
+      </div>
+
+      <!-- ── STORY SUBMISSION MODEL -->
+      <div class="story-form-backdrop" id="storyFormBackdrop">
+        <div class="story-form-box">
+          <button class="story-form-close" id="closeStoryForm" aria-label="Close">&#10005;</button>
+          <h3 class="story-form-title">Share Your Story</h3>
+          <p class="story-form-sub">Tell us about a Scotland World Cup moment that stayed with you.</p>
+          <div class="story-form-field">
+            <label for="storyName">Your Name</label>
+            <input type="text" id="storyName" placeholder="e.g. John Campbell" maxlength="40"/>
+          </div>
+          <div class="story-form-field">
+            <label for="storyYear">Year</label>
+            <select id="storyYear">
+              <option value="">Select a year</option>
+              <option>1974</option>
+              <option>1978</option>
+              <option>1982</option>
+              <option>1986</option>
+              <option>1990</option>
+              <option>1998</option>
+            </select>
+          </div>
+          <div class="story-form-field">
+            <label for="storyGame">Game Watched</label>
+            <input type="text" id="storyGame" placeholder="e.g. Scotland 3–2 Netherlands" maxlength="60"/>
+          </div>
+          <div class="story-form-field">
+            <label for="storyQuote">Your Story</label>
+            <textarea id="storyQuote" rows="4" maxlength="220" placeholder="Tell us your memory..."></textarea>
+            <span class="story-char-count"><span id="charCount">0</span> / 220</span>
+          </div>
+          <p class="story-form-error" id="storyError"></p>
+          <button class="btn-primary story-form-submit" id="submitStory">Submit Story</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQS -->
+    <section id="faqs">
+      <div class="content-width">
+        <div class="section-header step">
+          <span class="section-tag">Got Questions?</span>
+          <h2 class="section-title">FAQS</h2>
+          <p class="small-note">Swipe &#8592; &#8594; to browse questions</p>
+        </div>
+        <div class="faq-carousel-wrap">
+          <div class="faq-track" id="faqTrack">
+            <div class="faq-card card-float">
+              <p class="faq-q">What is the Dreamland Project?</p>
+              <p class="faq-a">Dreamland is an interactive web documentary celebrating Scotland's FIFA World Cup journey from 1974 to 1998. It combines editorial storytelling, player profiles, a match timeline, and fan stories all in one site.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">How do I navigate between sections?</p>
+              <p class="faq-a">Use the navigation bar at the top of the page. Click HOME, TIMELINE, PLAYERS, NO PARTY, STORIES or FAQS to jump to that section. The nav stays visible as you scroll.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">How do I view a player's full profile?</p>
+              <p class="faq-a">Go to the Players section and click any player card. A profile modal will open showing their biography, career era, position and achievements. Click the X or outside the modal to close it.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">Can I watch player highlights?</p>
+              <p class="faq-a">Yes. On each player card, click the arrow on the right to swipe to a video highlights panel. Click the left arrow to go back to the photo. On mobile, swipe left or right directly on the card.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">How do I browse all the players?</p>
+              <p class="faq-a">The Players section is split across two pages. Use the Prev and Next buttons below the cards, or click the dots to jump directly to a page.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">How do I scroll through the fan stories?</p>
+              <p class="faq-a">Use the arrow buttons below the Stories section to scroll left and right through the fan story cards and read experiences from supporters across the years.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">Can I submit my own story?</p>
+              <p class="faq-a">Yes. Click the Share Your Story button below the stories section, fill in your details and memory, and your story will appear alongside the others immediately after submitting.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">Does the site work on mobile?</p>
+              <p class="faq-a">Yes. The site is designed to work across modern browsers on both desktop and mobile. Player card swiping and the FAQ carousel are both touch-enabled.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">What browsers does the site support?</p>
+              <p class="faq-a">Dreamland works on all modern browsers including Chrome, Firefox, Edge and Safari. Keep your browser up to date for the best experience.</p>
+            </div>
+            <div class="faq-card card-float">
+              <p class="faq-q">Who built this site?</p>
+              <p class="faq-a">Dreamland was built by a student project team as part of a university web development module, covering full-stack development, frontend design, content research, and visual design.</p>
+            </div>
+          </div>
+          <div class="faq-nav">
+            <button class="scroll-btn" id="faqPrev" aria-label="Previous">&#8592;</button>
+            <div class="faq-dots" id="faqDots"></div>
+            <button class="scroll-btn" id="faqNext" aria-label="Next">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="content-width">
+        <div class="section-header step">
+          <span class="section-tag">The Team</span>
+          <h2 class="section-title">ABOUT US</h2>
+        </div>
+        <div class="team-grid step">
+          <div class="team-card" onclick="openTeamModal(0)">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </div>
+            <h4>Project Leader - Best A</h4>
+            <p>Full-Stack Developer</p>
+          </div>
+          <div class="team-card" onclick="openTeamModal(1)">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </div>
+            <h4>Frontend Developer - Jack W</h4>
+            <p>Interaction &amp; Integration Engineering</p>
+          </div>
+          <div class="team-card" onclick="openTeamModal(2)">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </div>
+            <h4>UI/UX - Wacka C</h4>
+            <p>Design &amp; Prototyping</p>
+          </div>
+        </div>
+        <div class="team-row-2 step">
+          <div class="team-card" onclick="openTeamModal(3)">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </div>
+            <h4>Content Research & Visual asset - Stephen C</h4>
+            <p>Research &amp; Video Creation</p>
+          </div>
+          <div class="team-card" onclick="openTeamModal(4)">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </div>
+            <h4>Visual asset & Media Designer - Mindy L</h4>
+            <p>Sourcing and preparing visual media assets</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TEAM MEMBER MODAL -->
+      <div class="modal-backdrop" id="teamModal" role="dialog" aria-modal="true" aria-labelledby="teamModalName">
+        <div class="modal-box">
+          <button class="modal-close" id="teamModalClose" aria-label="Close">&#10005;</button>
+          <div class="modal-img">
+            <img id="teamModalImg" src="" alt="">
+            <div class="modal-img-overlay"></div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <p class="modal-era" id="teamModalEra"></p>
+              <h2 class="modal-name" id="teamModalName"></h2>
+              <p class="modal-role" id="teamModalRole"></p>
+            </div>
+            <p class="modal-bio" id="teamModalBio"></p>
+            <div>
+              <p class="modal-ach-label">Key Contributions</p>
+              <ul class="modal-ach-list" id="teamModalAchList"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  QUIZ PANEL  -->
+    <button class="quiz-trigger" id="quizTrigger" aria-label="Take the quiz">
+      <span class="quiz-trigger-icon">&#9733;</span>
+      <span class="quiz-trigger-label">QUIZ</span>
+    </button>
+
+    <div class="quiz-backdrop" id="quizBackdrop"></div>
+
+    <div class="quiz-panel" id="quizPanel" role="dialog" aria-modal="true">
+      <button class="quiz-close" id="quizClose" aria-label="Close quiz">&#10005;</button>
+
+      <!-- START SCREEN -->
+      <div class="quiz-screen" id="quizStart">
+        <p class="quiz-eyebrow">Tartan Army</p>
+        <h2 class="quiz-title">How well do you<br>know Scotland?</h2>
+        <p class="quiz-sub">10 questions. Scottish World Cup history. No looking it up.</p>
+        <button class="quiz-btn-primary" id="quizBegin">Begin Quiz</button>
+      </div>
+
+      <!-- QUESTION SCREEN -->
+      <div class="quiz-screen hidden" id="quizQuestion">
+        <div class="quiz-progress-wrap">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+        <p class="quiz-counter" id="quizCounter">Question 1 of 10</p>
+        <p class="quiz-q-text" id="quizQText"></p>
+        <div class="quiz-options" id="quizOptions"></div>
+      </div>
+
+      <!-- RESULT SCREEN -->
+      <div class="quiz-screen hidden" id="quizResult">
+        <p class="quiz-eyebrow">Full Time</p>
+        <h2 class="quiz-title" id="quizScoreTitle"></h2>
+        <p class="quiz-score-detail" id="quizScoreDetail"></p>
+        <p class="quiz-verdict" id="quizVerdict"></p>
+        <button class="quiz-btn-primary" id="quizRestart">Play Again</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+  <div class="footer-brand">
+    <h2>DREAMLAND</h2>
+    <div class="footer-sub-headings">
+      <p>Scotland's World Cup Journey &middot; 1950&ndash;2026</p>
+      <p class="footer-note">
+        An interactive documentary celebrating 70 years of hope, heartbreak, and unwavering loyalty.
+      </p>
+    </div>
+  </div>
+
+  <p class="footer-copy">
+    &copy; 2026 Dreamland. All rights reserved.
+  </p>
+
+  <div class="footer-links">
+    <ul class="footer-nav-links">
+      <li class="footer-links-heading">Quick Links</li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#players">Players</a></li>
+      <li><a href="#party">No Party</a></li>
+      <li><a href="#stories">Stories</a></li>
+    </ul>
+
+    <ul class="footer-credit-links">
+      <li class="footer-links-heading">Credits</li>
+      <li><a href="#linkedin1">Best A</a></li>
+      <li><a href="#linkedin2">Jack W</a></li>
+      <li><a href="#linkedin3">Stephen C</a></li>
+      <li><a href="#linkedin4">Mindy L</a></li>
+      <li><a href="#linkedin5">Wacka C</a></li>
+    </ul>
+  </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+</body>
+</html>
