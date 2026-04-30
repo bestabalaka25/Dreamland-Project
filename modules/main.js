@@ -122,19 +122,33 @@ function swipeCard(event, btn, dir) {
 
   if (next === 1) {
     const vPanel = card.querySelectorAll('.player-media-panel')[1];
-    if (!vPanel.querySelector('iframe')) {
-      const iframe          = document.createElement('iframe');
-      iframe.src            = card.dataset.video + '&autoplay=1';
-      iframe.allow          = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      iframe.style.cssText  = 'width:100%;height:100%;border:none;display:block;';
-      vPanel.appendChild(iframe);
+    if (!vPanel.querySelector('iframe') && !vPanel.querySelector('video')) {
+      const src = card.dataset.video;
+      const isLocal = src && src.endsWith('.mp4');
+
+      if (isLocal) {
+        const video = document.createElement('video');
+        video.src         = src;
+        video.controls    = true;
+        video.playsInline = true;
+        video.autoplay    = true;
+        video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;background:#000;';
+        video.addEventListener('click', e => e.stopPropagation());
+        vPanel.appendChild(video);
+      } else {
+        const iframe = document.createElement('iframe');
+        iframe.src             = src + '&autoplay=1';
+        iframe.allow           = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText   = 'width:100%;height:100%;border:none;display:block;';
+        vPanel.appendChild(iframe);
+      }
     }
   }
 
   track.style.transform = next === 1 ? 'translateX(-50%)' : 'translateX(0)';
   card.dataset.panel    = next;
-  hint.textContent      = 'View Profile';
+  if (hint) hint.textContent = 'View Profile';
   dots.forEach((d, i)  => d.classList.toggle('active', i === next));
 }
 
