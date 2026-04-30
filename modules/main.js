@@ -132,7 +132,7 @@ function swipeCard(event, btn, dir) {
         video.controls    = true;
         video.playsInline = true;
         video.autoplay    = true;
-        video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;background:#000;';
+        video.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block;background:#000;';
         video.addEventListener('click', e => e.stopPropagation());
         vPanel.appendChild(video);
       } else {
