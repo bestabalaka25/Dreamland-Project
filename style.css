@@ -2124,6 +2124,30 @@ footer {
       z-index: 6;
       pointer-events: none;
     }
+    .player-thumb {
+      aspect-ratio: 3/4;
+    }
+    .player-media-track {
+      height: 100%;
+    }
+    .player-media-panel {
+      height: 100%;
+    }
+    .player-media-panel.video-panel iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      object-fit: contain;
+    }
+    .player-media-panel.video-panel video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
 
     /* FAQ CAROUSEL */
     #faqs {
