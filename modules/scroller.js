@@ -4,7 +4,7 @@ const main = document.querySelector("main");
 const scroll = main.querySelector("#scroll");
 const figure = scroll.querySelector("figure");
 
-const isMobile = window.innerWidth < 900;
+const isMobile = window.innerWidth < 770;
 
 const scroller = scrollama();
 
@@ -14,14 +14,16 @@ const init = (markersById, map) => {
         console.log(response.element.dataset.step);
         response.element.classList.add("is-active");
 
-        figure.querySelector("p").textContent = `${response.element.dataset.step}`; 
-
+        figure.querySelector("p").textContent = `${response.element.dataset.step}`;
+        
         let dynamicPadding = isMobile ? {right: 0, top: 0} : {right: 600, top: 300};
 
         if (response.element.dataset.step === "9") {
-            dynamicPadding = isMobile ? {right: 100, top: 300} : {right: 600, top: 300}
+            dynamicPadding = isMobile ? {right: 200, top: 300} : {right: 600, top: 300}
+        } else if (response.element.dataset.step === "8") {
+            dynamicPadding = isMobile ? {right: 0, top: 300} : {right: 300, top: 300}
         }
-        
+
         Object.keys(markersById).map(id => {
             markersById[id].map(marker => {
                 id === response.element.dataset.step ? 
@@ -46,4 +48,4 @@ const init = (markersById, map) => {
         .onStepExit(handleStepExit);
 }
 
-export { init, isMobile };
+export { init };

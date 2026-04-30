@@ -1,8 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { isMobile } from './scroller.js';
-
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
@@ -12,7 +10,7 @@ const createMap = (data) => {	// Create a map instance
 		style: 'mapbox://styles/mapbox/dark-v11', // style URL
 		center: [0.472944, 44.42004], // starting position [lng, lat]
 		zoom: 5,
-		minZoom: isMobile ? 0 : 3 // starting zoom
+		minZoom: 0 // starting zoom
 	});
 	map.scrollZoom.disable();
 /*
