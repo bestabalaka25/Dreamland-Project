@@ -604,8 +604,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 })();
-window.handleCardClick = handleCardClick;
-window.swipeCard = swipeCard;
-window.changePage = changePage;
-window.goPage = goPage;
-window.scrollStories = scrollStories;
