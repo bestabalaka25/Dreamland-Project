@@ -4,7 +4,7 @@ A high-performance, immersive "scrollytelling" platform built for Iain Donald to
 ## Technical Stack:
 [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5c)
 [![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![JavaScript](https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](https://vite.dev)
 [![Mapbox](https://img.shields.io/badge/Mapbox_GL_JS-black?logo=mapbox)](https://www.mapbox.com/)
 [![Scrollama](https://img.shields.io/badge/Scrollama-ce6038)](https://github.com/russellsamora/scrollama)
