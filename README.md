@@ -5,10 +5,8 @@ A high-performance, immersive "scrollytelling" platform built for Iain Donald to
 [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5c)
 [![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](https://vite.dev)
-<a href="https://mapbox.com">
-  <img src="https://shields.io" alt="Mapbox">
-</a>
-
+[![Mapbox](https://img.shields.io/badge/Mapbox_GL_JS-black?logo=mapbox)](https://www.mapbox.com/)
+[![Scrollama](https://img.shields.io/badge/Scrollama-ce6038)](https://github.com/russellsamora/scrollama)
 
 ##  Key Engineering Features
 
